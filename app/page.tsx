@@ -187,13 +187,21 @@ export default function HomePage() {
               {t.togetherDesc}
             </p>
             <a href={`mailto:${profile.email}`}
-              className="inline-flex items-center gap-2 font-medium text-base px-7 py-3 rounded-full transition-opacity hover:opacity-80"
+              className="
+                  mx-auto flex w-full max-w-[280px] items-center justify-center gap-2
+                  rounded-full px-4 py-3 text-sm font-medium
+                  transition-opacity hover:opacity-80
+                  sm:inline-flex sm:w-auto sm:max-w-none sm:px-7 sm:text-base
+                  "
               style={{ backgroundColor: "var(--text)", color: "var(--bg)" }}>
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <svg width="18" height="18" shrink-0 viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                 <rect x="2" y="4" width="20" height="16" rx="2" />
                 <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
               </svg>
-              {profile.email}
+              <span className="sm:hidden">Enviar mensagem</span>
+              <span className="hidden min-w-0 truncate sm:inline">
+                {profile.email}
+              </span>
             </a>
           </div>
         </section>
