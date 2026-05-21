@@ -8,8 +8,19 @@ export default function Navbar() {
   const pathname = usePathname();
   const [theme, setTheme] = useState<"dark" | "light">("dark");
 
+  // Lê o tema salvo ao montar
+  useEffect(() => {
+    const saved = localStorage.getItem("theme") as "dark" | "light" | null;
+    if (saved) {
+      setTheme(saved);
+      document.documentElement.setAttribute("data-theme", saved);
+    }
+  }, []);
+
+  // Aplica e salva sempre que muda
   useEffect(() => {
     document.documentElement.setAttribute("data-theme", theme);
+    localStorage.setItem("theme", theme);
   }, [theme]);
 
   const links = [
