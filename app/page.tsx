@@ -26,7 +26,7 @@ export default function HomePage() {
       <Navbar />
       <main className="max-w-4xl mx-auto px-6 pt-28 pb-8">
 
-        {/* Hero */}
+        
         <section className="flex items-start gap-8 mb-16">
           <div className="w-24 h-24 rounded-full flex-shrink-0 overflow-hidden"
             style={{ border: "1px solid var(--border2)" }}>
@@ -56,7 +56,7 @@ export default function HomePage() {
           </div>
         </section>
 
-        {/* Sobre Mim */}
+        
         <section className="mb-14">
           <h2 className="text-base font-semibold mb-4" style={{ color: "var(--text)" }}>Sobre Mim</h2>
           {profile.bio.map((para, i) => (
@@ -64,7 +64,7 @@ export default function HomePage() {
           ))}
         </section>
 
-        {/* Experiência */}
+        
         <section className="mb-14">
           <h2 className="text-base font-semibold mb-6" style={{ color: "var(--text)" }}>Experiência</h2>
           <div className="space-y-5">
@@ -86,7 +86,7 @@ export default function HomePage() {
           </div>
         </section>
 
-        {/* Educação */}
+        
         <section className="mb-14">
           <h2 className="text-base font-semibold mb-6" style={{ color: "var(--text)" }}>Educação</h2>
           <div className="space-y-5">
@@ -106,7 +106,7 @@ export default function HomePage() {
           </div>
         </section>
 
-        {/* Skills com ícones */}
+        
         <section className="mb-14">
           <h2
             className="text-base font-semibold mb-4"
@@ -133,7 +133,7 @@ export default function HomePage() {
           </div>
         </section>
 
-        {/* Vamos fazer algo juntos? */}
+        
         <section className="mb-14">
           <div className="rounded-2xl p-10 text-center" style={{ border: "1px solid var(--border)" }}>
             <h2 className="text-3xl font-bold mb-3" style={{ color: "var(--text)" }}>Vamos fazer algo juntos?</h2>
@@ -154,7 +154,7 @@ export default function HomePage() {
           </div>
         </section>
 
-        {/* Posts Recentes */}
+        
         <section className="mb-14">
           <h2 className="text-base font-semibold mb-6" style={{ color: "var(--text)" }}>Posts Recentes</h2>
           <div className="space-y-0">

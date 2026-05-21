@@ -12,7 +12,7 @@ function renderContent(content: string) {
   while (i < lines.length) {
     const line = lines[i];
 
-    // Bloco de código
+    
     if (line.startsWith("```")) {
       const codeLines: string[] = [];
       i++;
@@ -30,7 +30,7 @@ function renderContent(content: string) {
       continue;
     }
 
-    // Título h2
+    
     if (line.startsWith("## ")) {
       elements.push(
         <h2 key={i} className="text-xl font-bold mt-8 mb-3" style={{ color: "var(--text)" }}>
@@ -41,7 +41,7 @@ function renderContent(content: string) {
       continue;
     }
 
-    // Lista com -
+    
     if (line.startsWith("- ")) {
       const items: string[] = [];
       while (i < lines.length && lines[i].startsWith("- ")) {
@@ -65,14 +65,14 @@ function renderContent(content: string) {
       continue;
     }
 
-    // Linha vazia
+    
     if (line.trim() === "") {
       elements.push(<div key={i} className="h-2" />);
       i++;
       continue;
     }
 
-    // Parágrafo normal com negrito
+    
     const parts = line.split(/\*\*(.*?)\*\*/g);
     elements.push(
       <p key={i} className="text-base leading-relaxed" style={{ color: "var(--text-muted)" }}>

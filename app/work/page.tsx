@@ -6,7 +6,7 @@ import { projects } from "../data";
 function ProjectCard({ project }: { project: typeof projects[0] }) {
   return (
     <div className="border border-[#1f1f1f] rounded-xl overflow-hidden hover:border-[#3f3f3f] transition-colors group">
-      {/* Preview */}
+      
       <div className="h-48 bg-[#0f0f0f] relative overflow-hidden border-b border-[#1f1f1f]">
         {project.icon ? (
           <Image
@@ -26,7 +26,7 @@ function ProjectCard({ project }: { project: typeof projects[0] }) {
         )}
       </div>
 
-      {/* Info */}
+      
       <div className="p-6">
         <div className="flex items-start justify-between gap-4 mb-3">
           <h3 className="text font-semibold text-lg">{project.title}</h3>
