@@ -1,6 +1,6 @@
 export const profile = {
   name: "Gabriel Santos",
-  title: "Engenheiro de Software & Desenvolvedor.",
+  title: "Engenheiro de Soware & Desenvolvedor.",
   github: "https://github.com/sixthy",
   linkedin: "https://linkedin.com/in/gabriel-ferreira7",
   githubHandle: "@Sixthy",
@@ -121,4 +121,16 @@ interface ButtonProps {
 A curva inicial existe, mas o ganho em produtividade e confiança no código compensa muito. Hoje não consigo imaginar trabalhar em React sem TypeScript.
     `,
   },
+];
+
+export const moments = [
+  { src: "/moments/ghostshow.jpg", alt: "Momento 1" },
+  { src: "/moments/#.jpg", alt: "Momento 2" },
+  { src: "/moments/#.jpg", alt: "Momento 3" },
+  { src: "/moments/#.jpg", alt: "Momento 4" },
+  { src: "/moments/#.jpg", alt: "Momento 5" },
+  { src: "/moments/#.jpg", alt: "Momento 6" },
+  { src: "/moments/#.jpg", alt: "Momento 7" },
+  { src: "/moments/#.jpg", alt: "Momento 8" },
+  { src: "/moments/#.jpg", alt: "Momento 9" },
 ];
