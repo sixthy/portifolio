@@ -1,14 +1,22 @@
 export const profile = {
   name: "Gabriel Santos",
   title: "Engenheiro de Soware & Desenvolvedor.",
+  titleen: "Software Engineer & Developer.",
   github: "https://github.com/sixthy",
   linkedin: "https://linkedin.com/in/gabriel-ferreira7",
   githubHandle: "@Sixthy",
   email: "gabrielferreirasantos723@email.com",
+  cvPt: "/cv-pt.pdf",
+  cvEn: "/cv-en.pdf",
   bio: [
     "Sou Gabriel Santos, natural de Minas Gerais, Brasil. Atualmente estudante de Engenharia Informática e Aplicações na IPLUSO.",
     "Meu interesse por tecnologia começou ainda no ensino médio, quando tive contato com a área de telecomunicações e redes ao ajudar meus pais na empresa da família.",
     "Hoje, procuro oportunidades para aplicar meus conhecimentos em ambientes reais, aprender continuamente e desenvolver minha carreira na área de TI.",
+  ],
+  bioEn: [
+    "I'm Gabriel Santos, from Minas Gerais, Brazil. Currently studying Computer Engineering and Applications at IPLUSO.",
+    "My interest in technology started in high school, when I was exposed to telecommunications and networking while helping my parents in the family business.",
+    "Today, I look for opportunities to apply my knowledge in real environments, learn continuously, and grow my career in IT.",
   ],
 };
 
