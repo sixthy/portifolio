@@ -1,7 +1,7 @@
 export const profile = {
   name: "Gabriel Santos",
   title: "Engenheiro de Soware & Desenvolvedor.",
-  titleen: "Software Engineer & Developer.",
+  titleEn: "Software Engineer & Developer.",
   github: "https://github.com/sixthy",
   linkedin: "https://linkedin.com/in/gabriel-ferreira7",
   githubHandle: "@Sixthy",
@@ -118,6 +118,7 @@ export const posts = [
   {
     slug: "construindo-meu-portfolio",
     title: "Como estou construindo meu portfólio.",
+    titleEn: "How I'm building my portfolio.",
     date: "20 de maio de 2026",
     readTime: "5 min",
     tag: "Info",
@@ -140,10 +141,12 @@ Depois partindo para o código. Criei as páginas principais: **Início**, **Pro
 
 Ainda tenho muita coisa para melhorar, mas estou satisfeito com o progresso que estou tendo.
     `,
+    contentEn: "ww",
   },
   {
     slug: "react-e-typescript",
     title: "O que aprendi com React e TypeScript",
+    titleEn: "What i've learned with React and TypeScript.",
     date: "20 de maio de 2025",
     readTime: "3 min",
     tag: "Info",
@@ -170,10 +173,12 @@ interface ButtonProps {
 
 Existe uma curva inicial no aprendizado, mas o ganho em produtividade e confiança no código compensa muito. Hoje já entendo melhor sobre o React com TypeScript e porque o usar.
     `,
+    contentEn: "ww",
   },
   {
     slug: "construindo-meu-barberapp",
     title: "Como estou construindo meu barberapp.",
+    titleEn: "How I'm building my barberapp.",
     date: "21 de maio de 2026",
     readTime: "5 min",
     tag: "Info",
@@ -201,6 +206,7 @@ Cada um com um propósito desde a interface do Cliente quanto a interface do Don
 
 Sobre esse projeto percebo que ainda estou no começo, mas sinto que já dei meu primeiro passo.
     `,
+    contentEn: "ww",
   },
 ];
 

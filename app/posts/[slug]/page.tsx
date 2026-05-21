@@ -1,18 +1,18 @@
+"use client";
+
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import { useState, useEffect } from "react";
 import { posts } from "../../data";
 
 function renderContent(content: string) {
   const lines = content.trim().split("\n");
   const elements: React.ReactNode[] = [];
   let i = 0;
-
   while (i < lines.length) {
     const line = lines[i];
-
-    
     if (line.startsWith("```")) {
       const codeLines: string[] = [];
       i++;
@@ -26,22 +26,16 @@ function renderContent(content: string) {
           <code>{codeLines.join("\n")}</code>
         </pre>
       );
-      i++;
-      continue;
+      i++; continue;
     }
-
-    
     if (line.startsWith("## ")) {
       elements.push(
         <h2 key={i} className="text-xl font-bold mt-8 mb-3" style={{ color: "var(--text)" }}>
           {line.replace("## ", "")}
         </h2>
       );
-      i++;
-      continue;
+      i++; continue;
     }
-
-    
     if (line.startsWith("- ")) {
       const items: string[] = [];
       while (i < lines.length && lines[i].startsWith("- ")) {
@@ -54,9 +48,7 @@ function renderContent(content: string) {
             const parts = item.split(/\*\*(.*?)\*\*/g);
             return (
               <li key={j} className="text-base leading-relaxed">
-                {parts.map((p, k) =>
-                  k % 2 === 1 ? <strong key={k} style={{ color: "var(--text)" }}>{p}</strong> : p
-                )}
+                {parts.map((p, k) => k % 2 === 1 ? <strong key={k} style={{ color: "var(--text)" }}>{p}</strong> : p)}
               </li>
             );
           })}
@@ -64,65 +56,68 @@ function renderContent(content: string) {
       );
       continue;
     }
-
-    
-    if (line.trim() === "") {
-      elements.push(<div key={i} className="h-2" />);
-      i++;
-      continue;
-    }
-
-    
+    if (line.trim() === "") { elements.push(<div key={i} className="h-2" />); i++; continue; }
     const parts = line.split(/\*\*(.*?)\*\*/g);
     elements.push(
       <p key={i} className="text-base leading-relaxed" style={{ color: "var(--text-muted)" }}>
-        {parts.map((part, j) =>
-          j % 2 === 1 ? <strong key={j} style={{ color: "var(--text)" }}>{part}</strong> : part
-        )}
+        {parts.map((part, j) => j % 2 === 1 ? <strong key={j} style={{ color: "var(--text)" }}>{part}</strong> : part)}
       </p>
     );
     i++;
   }
-
   return elements;
 }
 
 export default function PostPage({ params }: { params: { slug: string } }) {
+  const [lang, setLang] = useState<"pt" | "en">("pt");
+
+  useEffect(() => {
+    const saved = localStorage.getItem("lang") as "pt" | "en" | null;
+    if (saved) setLang(saved);
+    const handler = () => {
+      const current = localStorage.getItem("lang") as "pt" | "en" | null;
+      if (current) setLang(current);
+    };
+    window.addEventListener("langchange", handler);
+    return () => window.removeEventListener("langchange", handler);
+  }, []);
+
   const post = posts.find((p) => p.slug === params.slug);
   if (!post) notFound();
+
+  const title = lang === "en" && post.titleEn ? post.titleEn : post.title;
+  const content = lang === "en" && post.contentEn ? post.contentEn : post.content;
+  const backLabel = lang === "pt" ? "Voltar para posts" : "Back to posts";
+  const readLabel = lang === "pt" ? "de leitura" : "read";
 
   return (
     <>
       <Navbar />
       <main className="max-w-2xl mx-auto px-6 pt-28 pb-16">
-
         <Link href="/posts"
-          className="inline-flex items-center gap-2 text-sm mb-10 transition-colors hover:opacity-70"
+          className="inline-flex items-center gap-2 text-sm mb-10 transition-opacity hover:opacity-70"
           style={{ color: "var(--text-dim)" }}>
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
             <path d="M19 12H5M12 5l-7 7 7 7"/>
           </svg>
-          Voltar para posts
+          {backLabel}
         </Link>
-
         <div className="mb-10">
           <span className="text-xs font-medium uppercase tracking-wider" style={{ color: "var(--accent)" }}>
             {post.tag}
           </span>
           <h1 className="text-4xl font-bold mt-2 mb-4 leading-tight" style={{ color: "var(--text)" }}>
-            {post.title}
+            {title}
           </h1>
           <p className="text-sm" style={{ color: "var(--text-dim)" }}>
-            {post.date} • {post.readTime} de leitura
+            {post.date} • {post.readTime} {readLabel}
           </p>
         </div>
-
         <div className="pt-10" style={{ borderTop: "1px solid var(--border)" }}>
           <div className="space-y-1">
-            {renderContent(post.content)}
+            {renderContent(content)}
           </div>
         </div>
-
       </main>
       <Footer />
     </>

@@ -6,13 +6,22 @@ export const metadata: Metadata = {
   description: "Software Engineer & Developer. Building things that matter.",
 };
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en">
+    <html lang="pt">
+      <head>
+        {/* Aplica tema e idioma ANTES do render para evitar flash */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              try {
+                var theme = localStorage.getItem('theme') || 'dark';
+                document.documentElement.setAttribute('data-theme', theme);
+              } catch(e) {}
+            `,
+          }}
+        />
+      </head>
       <body>{children}</body>
     </html>
   );
