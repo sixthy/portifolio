@@ -10,7 +10,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="pt">
       <head>
-        {/* Aplica tema e idioma ANTES do render para evitar flash */}
         <script
           dangerouslySetInnerHTML={{
             __html: `
