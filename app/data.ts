@@ -141,7 +141,25 @@ Depois partindo para o código. Criei as páginas principais: **Início**, **Pro
 
 Ainda tenho muita coisa para melhorar, mas estou satisfeito com o progresso que estou tendo.
     `,
-    contentEn: "ww",
+    contentEn: `
+    Building a portfolio from scratch is one of the best ways to learn by doing.
+
+I chose to use **Next.js** with **TypeScript** and **Tailwind CSS** because I wanted something fast, modern, and easy to maintain. The idea was to create something simple, yet reflective of my identity as a developer.
+
+## The process
+
+I started with the design: I went looking for references of portfolios I admired and tried to understand what made each of them special. In the end, I opted for a minimalist style, with a dark background and clean typography.
+
+After that, I moved on to the code. I created the main pages: **Home**, **Projects**, **Posts**, and **Moments**. Each one with a purpose.
+
+## What I learned
+
+- Organizing data well in a separate file makes maintenance much easier.
+- Tailwind is amazing for rapid prototyping.
+- Next.js App Router has a learning curve, but it's totally worth it.
+
+I still have a lot of things to improve, but I'm satisfied with the progress I'm making.
+    `,
   },
   {
     slug: "react-e-typescript",
@@ -173,7 +191,25 @@ interface ButtonProps {
 
 Existe uma curva inicial no aprendizado, mas o ganho em produtividade e confiança no código compensa muito. Hoje já entendo melhor sobre o React com TypeScript e porque o usar.
     `,
-    contentEn: "ww",
+    contentEn: `When I started using **TypeScript** with **React**, my first reaction was: "why all this extra work?". After a few lines of code, I got it.
+
+## Typing saves lives
+With TypeScript, you catch errors before you even run the code. Passing the wrong props to a component? The editor warns you right away. This saved me a lot of time and headaches.
+
+## More predictable components
+Typing your props makes your components self-documenting. Anyone reading the code knows exactly what each component expects to receive.
+
+
+\`\`\`tsx
+interface ButtonProps {
+  label: string;
+  onClick: () => void;
+  variant?: "primary" | "secondary";
+}
+\`\`\`
+
+## Conclusion
+There is an initial learning curve, but the boost in productivity and code confidence is totally worth it. Today I better understand React with TypeScript and why to use it.`,
   },
   {
     slug: "construindo-meu-barberapp",
@@ -206,7 +242,30 @@ Cada um com um propósito desde a interface do Cliente quanto a interface do Don
 
 Sobre esse projeto percebo que ainda estou no começo, mas sinto que já dei meu primeiro passo.
     `,
-    contentEn: "ww",
+    contentEn: `
+    Building an app from scratch was challenging, but it's also one of the best ways to learn by doing.
+
+I chose to use Next.js with **TypeScript** and **Tailwind CSS** because I wanted something practical, modern, and easy to modify.
+One day, while getting a haircut, I thought, "Why not build an app to help my barber?".
+The idea was to create something simple as a foundation for now, but with a fully functional system—that way, if I ever get a client in the future, I just need to tweak the template.
+So, I came up with the idea of a frontend for both the Client and the Owner (complete with a dashboard), and a backend featuring tools for the Owner to view, edit, and remove appointments.
+
+## The process
+I started with the design: I pictured a barbershop, what its homepage should look like, and what would be visually appealing to a client.
+In the end, I went with a barbershop-themed style, featuring a dark background and clean typography, so Id already have a solid base to show a potential client.
+
+After that, I jumped into the code. I created the main pages: **Home**, **Book Appointment**, **Dashboard**, **Edit**, and **Remove**.
+Each one serves a specific purpose, covering both the Client and Owner interfaces.
+
+## What I learned
+- A well-organized project will always be an advantage, both for me and for anyone who might be on my team one day.
+
+- Tailwind is awesome, and I'm gradually figuring out how to get everything looking exactly the way I want.
+
+- Next.js App Router seems difficult when you first start, but as you keep using it, it becomes quite intuitive.
+
+Looking at this project, I realize I'm still at the beginning, but I feel like I've already taken my first big step.
+    `,
   },
 ];
 
@@ -220,5 +279,5 @@ export const moments = [
   { src: "/moments/barco.jpg", alt: "Momento 7" },
   { src: "/moments/friends.jpg", alt: "Momento 8" },
   { src: "/moments/ouropreto.jpg", alt: "Momento 9" },
-  
+
 ];
