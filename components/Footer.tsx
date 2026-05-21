@@ -19,14 +19,6 @@ export default function Footer() {
     <footer style={{ borderTop: "1px solid var(--border)" }} className="mt-16">
       <div className="max-w-4xl mx-auto px-6 py-12">
         <div className="flex justify-center gap-10 mb-10">
-          <a href="https://instagram.com" target="_blank" rel="noopener noreferrer"
-            className="transition-colors hover:opacity-100 opacity-40" style={{ color: "var(--text)" }}>
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-              <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
-              <circle cx="12" cy="12" r="4"/>
-              <circle cx="17.5" cy="6.5" r="0.5" fill="currentColor" stroke="none"/>
-            </svg>
-          </a>
           <a href={profile.github} target="_blank" rel="noopener noreferrer"
             className="transition-colors hover:opacity-100 opacity-40" style={{ color: "var(--text)" }}>
             <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
