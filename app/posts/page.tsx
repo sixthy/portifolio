@@ -11,7 +11,7 @@ export default function PostsPage() {
         <div className="text-center mb-14">
           <h1 className="text-5xl font-bold mb-4" style={{ color: "var(--text)" }}>Posts</h1>
           <p className="text-base max-w-xl mx-auto leading-relaxed" style={{ color: "var(--text-muted)" }}>
-            Coisinhas sobre minha jornada.
+            Comentando brevemente sobre a minha jornada.
           </p>
         </div>
 

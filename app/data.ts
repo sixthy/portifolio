@@ -70,7 +70,7 @@ export const projects = [
     tech: ["Java"],
     github: "https://github.com/sixthy/JavaTVsimulator",
     live: "https://github.com/sixthy",
-    icon: "/projects/#.png",
+    icon: "/projects/tvicon.png",
   },
   {
     title: "AlgorithmsDS Station",
@@ -78,7 +78,7 @@ export const projects = [
     tech: ["Python"],
     github: "https://github.com/sixthy/AlgorithmsDS-Station",
     live: "https://github.com/sixthy",
-    icon: "/projects/#.png",
+    icon: "/projects/Station.png",
   },
   {
     title: "Algorithm Huffman Compression",
@@ -86,7 +86,7 @@ export const projects = [
     tech: ["Java"],
     github: "https://github.com/sixthy/Huffman-Compression ",
     live: "https://github.com/sixthy",
-    icon: "/projects/#.png",
+    icon: "/projects/Huffman.png",
   },
   {
     title: "WebScrapper ",
@@ -94,7 +94,7 @@ export const projects = [
     tech: ["Python, BeautifulSoup, Pandas"],
     github: "https://github.com/sixthy/WebScrapper",
     live: "https://github.com/sixthy",
-    icon: "/projects/#.png",
+    icon: "/projects/Webscrapper.png",
   },
   {
     title: "To Do List",
@@ -102,7 +102,7 @@ export const projects = [
     tech: ["JavaScript, Bulma, Node"],
     github: "https://github.com/sixthy/to-do-list",
     live: "https://github.com/sixthy",
-    icon: "/projects/#.png",
+    icon: "/projects/todolist.png",
   },
 ];
 
@@ -111,7 +111,7 @@ export const posts = [
     slug: "construindo-meu-portfolio",
     title: "Como estou construindo meu portfólio.",
     date: "20 de maio de 2026",
-    readTime: "3 min",
+    readTime: "5 min",
     tag: "Info",
     content: `
 Construir um portfólio do zero é uma das melhores formas de aprender na prática.
@@ -122,15 +122,15 @@ Escolhi usar **Next.js** com **TypeScript** e **Tailwind CSS** porque queria alg
 
 Comecei pelo design: fui buscar referências de portfólios que eu admirava e tentei entender o que tornava cada um deles especial. No final, optei por um estilo minimalista, fundo escuro e tipografia limpa.
 
-Depois partiu para o código. Criei as páginas principais: **Início**, **Projetos**, **Posts** e **Momentos**. Cada uma com um propósito claro.
+Depois partindo para o código. Criei as páginas principais: **Início**, **Projetos**, **Posts** e **Momentos**. Cada um com um propósito.
 
 ## O que aprendi
 
-- Organizar bem os dados em um arquivo separado facilita muito a manutenção
-- Tailwind é incrível para prototipagem rápida
-- Next.js App Router tem uma curva de aprendizado, mas vale muito a pena
+- Organizar bem os dados em um arquivo separado facilita muito a manutenção.
+- Tailwind é incrível para prototipagem rápida.
+- Next.js App Router tem uma curva de aprendizado, mas vale muito a pena.
 
-Ainda tem muita coisa para melhorar, mas estou satisfeito com o progresso.
+Ainda tenho muita coisa para melhorar, mas estou satisfeito com o progresso que estou tendo.
     `,
   },
   {
@@ -140,11 +140,11 @@ Ainda tem muita coisa para melhorar, mas estou satisfeito com o progresso.
     readTime: "3 min",
     tag: "Info",
     content: `
-Quando comecei a usar **TypeScript** com **React**, a primeira reação foi: "por que tanto trabalho?". Depois de alguns projetos, entendi.
+Quando comecei a usar **TypeScript** com **React**, a minha primeira reação foi: "pra que tanto trabalho?". Depois de algumas linhas de codigo, entendi.
 
 ## Tipagem salva vidas
 
-Com TypeScript, você descobre erros antes mesmo de rodar o código. Passar props erradas para um componente? O editor já avisa. Isso economiza horas de debug.
+Com TypeScript, você descobre erros antes mesmo de rodar o código. Passar props erradas para um componente? O editor já avisa. Isso me poupou muito tempo de quebrar a cabeça.
 
 ## Componentes mais previsíveis
 
@@ -160,19 +160,51 @@ interface ButtonProps {
 
 ## Conclusão
 
-A curva inicial existe, mas o ganho em produtividade e confiança no código compensa muito. Hoje não consigo imaginar trabalhar em React sem TypeScript.
+Existe uma curva inicial no aprendizado, mas o ganho em produtividade e confiança no código compensa muito. Hoje já entendo melhor sobre o React com TypeScript e porque o usar.
+    `,
+  },
+  {
+    slug: "construindo-meu-barberapp",
+    title: "Como estou construindo meu barberapp.",
+    date: "21 de maio de 2026",
+    readTime: "5 min",
+    tag: "Info",
+    content: `
+Construir um App do zero foi desafiador mas também é uma das melhores formas de aprender na prática.
+
+Escolhi usar **Next.js** com **TypeScript** e **Tailwind CSS** porque queria algo prático, moderno e fácil de modificar. 
+Um dia estava cortando o cabelo e pensei "por que não um App que ajudaria meu barbeiro?". 
+A ideia foi criar algo simples por enquanto como base mas com um sistema completamente funcional, sendo assim se eu tivesse um cliente um dia era só alterar o modelo.
+Então veio a ideia de um front para o Cliente e para o Dono com um dashboard, um back com funcionalidade para o Dono ver/editar/remover a agenda.
+
+## O processo
+
+Comecei pelo design: pensei em uma barbearia e como deveria ficar a sua pagina inicial e o que seria interessante para o cliente visualmente. 
+No final, optei por um estilo tematico de barbearia, fundo escuro e tipografia limpa, assim ja tendo uma base para algum cliente ver.
+
+Depois indo para o código. Criei as páginas principais: **Início**, **Agendar**, **Dashboard**, **Editar**, **Remover**. 
+Cada um com um propósito desde a interface do Cliente quanto a interface do Dono.
+
+## O que aprendi
+
+- Um projeto bem organizado sempre vai ser vantajoso tanto para mim quanto para quem for da minha equipe um dia.
+- Tailwind é incrível e estou descobrindo aos poucos como deixar tudo do jeito que eu quero.
+- Next.js App Router parece ser difícil quando você começa mas a medida que vamos utilizando vem se tornando algo intuitivo.
+
+Sobre esse projeto percebo que ainda estou no começo, mas sinto que já dei meu primeiro passo.
     `,
   },
 ];
 
 export const moments = [
-  { src: "/moments/ghostshow.jpg", alt: "Momento 1" },
-  { src: "/moments/#.jpg", alt: "Momento 2" },
-  { src: "/moments/#.jpg", alt: "Momento 3" },
-  { src: "/moments/#.jpg", alt: "Momento 4" },
-  { src: "/moments/#.jpg", alt: "Momento 5" },
-  { src: "/moments/#.jpg", alt: "Momento 6" },
-  { src: "/moments/#.jpg", alt: "Momento 7" },
-  { src: "/moments/#.jpg", alt: "Momento 8" },
-  { src: "/moments/#.jpg", alt: "Momento 9" },
+  { src: "/moments/sevilla.jpg", alt: "Momento 1" },
+  { src: "/moments/papas.jpg", alt: "Momento 2" },
+  { src: "/moments/family.jpg", alt: "Momento 3" },
+  { src: "/moments/kinos.jpg", alt: "Momento 4" },
+  { src: "/moments/cec.jpg", alt: "Momento 5" },
+  { src: "/moments/ghostshow.jpg", alt: "Momento 6" },
+  { src: "/moments/barco.jpg", alt: "Momento 7" },
+  { src: "/moments/friends.jpg", alt: "Momento 8" },
+  { src: "/moments/ouropreto.jpg", alt: "Momento 9" },
+  
 ];
