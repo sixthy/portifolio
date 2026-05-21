@@ -1,45 +1,61 @@
-"use client";
-
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
+
+type Theme = "dark" | "light";
+type Lang = "pt" | "en";
 
 export function useLang() {
-  const [lang, setLangState] = useState<"pt" | "en">("pt");
+  const [lang, setLangState] = useState<Lang>("pt");
+
   useEffect(() => {
-    const saved = localStorage.getItem("lang") as "pt" | "en" | null;
+    const saved = localStorage.getItem("lang") as Lang | null;
     if (saved) setLangState(saved);
+
+    const handler = () => {
+      const current = localStorage.getItem("lang") as Lang | null;
+      if (current) setLangState(current);
+    };
+
+    window.addEventListener("langchange", handler);
+    return () => window.removeEventListener("langchange", handler);
   }, []);
+
   return lang;
 }
 
 export default function Navbar() {
   const pathname = usePathname();
-  const [theme, setTheme] = useState<"dark" | "light">("dark");
-  const [lang, setLangState] = useState<"pt" | "en">("pt");
+  const currentPath = pathname ?? "/";
 
-  // Lê o tema salvo 
+  const [theme, setTheme] = useState<Theme | null>(null);
+  const [lang, setLangState] = useState<Lang>("pt");
+
   useEffect(() => {
-    const savedTheme = localStorage.getItem("theme") as "dark" | "light" | null;
-    if (savedTheme) {
-      setTheme(savedTheme);
-      document.documentElement.setAttribute("data-theme", savedTheme);
-    }
-    const savedLang = localStorage.getItem("lang") as "pt" | "en" | null;
+    const savedTheme = localStorage.getItem("theme") as Theme | null;
+    const initialTheme = savedTheme ?? "dark";
+
+    setTheme(initialTheme);
+    document.documentElement.setAttribute("data-theme", initialTheme);
+    document.documentElement.style.colorScheme = initialTheme;
+
+    const savedLang = localStorage.getItem("lang") as Lang | null;
     if (savedLang) setLangState(savedLang);
   }, []);
 
-  // Aplica e salva sempre que muda
   useEffect(() => {
+    if (!theme) return;
+
     document.documentElement.setAttribute("data-theme", theme);
+    document.documentElement.style.colorScheme = theme;
     localStorage.setItem("theme", theme);
   }, [theme]);
 
   const toggleLang = () => {
     const next = lang === "pt" ? "en" : "pt";
+
     setLangState(next);
     localStorage.setItem("lang", next);
-    // dispara evento para outras partes da página lerem
     window.dispatchEvent(new Event("langchange"));
   };
 
@@ -58,19 +74,23 @@ export default function Navbar() {
           { href: "/posts", label: "Posts" },
         ];
 
-  const isDark = theme === "dark";
+  const isDark = (theme ?? "dark") === "dark";
 
   return (
     <nav
-      className="fixed top-0 left-0 right-0 z-50 backdrop-blur-sm"
-      style={{ backgroundColor: "var(--nav-bg)", borderBottom: "1px solid var(--nav-border)" }}
+      className="fixed left-0 right-0 top-0 z-50 backdrop-blur-sm"
+      style={{
+        backgroundColor: "var(--nav-bg)",
+        borderBottom: "1px solid var(--nav-border)",
+      }}
     >
-      <div className="max-w-4xl mx-auto px-6 h-12 flex items-center justify-between">
+      <div className="mx-auto flex h-12 max-w-4xl items-center justify-between px-6">
         <div className="flex items-center gap-1">
           {links.map((link, i) => {
             const isActive =
-              pathname === link.href ||
-              (link.href !== "/" && pathname.startsWith(link.href));
+              currentPath === link.href ||
+              (link.href !== "/" && currentPath.startsWith(link.href));
+
             return (
               <div key={link.href} className="flex items-center">
                 <Link
@@ -83,6 +103,7 @@ export default function Navbar() {
                 >
                   {link.label}
                 </Link>
+
                 {i < links.length - 1 && (
                   <span style={{ color: "var(--border2)" }} className="text-sm">
                     |
@@ -94,10 +115,9 @@ export default function Navbar() {
         </div>
 
         <div className="flex items-center gap-3">
-          {/* Botão de idioma */}
           <button
             onClick={toggleLang}
-            className="text-xs font-medium px-2 py-1 rounded transition-colors"
+            className="rounded px-2 py-1 text-xs font-medium transition-colors"
             style={{
               color: "var(--text-dim)",
               border: "1px solid var(--border2)",
@@ -107,10 +127,13 @@ export default function Navbar() {
             {lang === "pt" ? "EN" : "PT"}
           </button>
 
-          {/* Botão de tema */}
           <button
-            onClick={() => setTheme((t) => (t === "dark" ? "light" : "dark"))}
-            className="transition-colors text-lg"
+            onClick={() =>
+              setTheme((current) =>
+                (current ?? "dark") === "dark" ? "light" : "dark"
+              )
+            }
+            className="text-lg transition-colors"
             style={{ color: "var(--text-dim)" }}
             aria-label="Alternar tema"
             title={isDark ? "Modo claro" : "Modo escuro"}
