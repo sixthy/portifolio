@@ -62,15 +62,15 @@ export default function HomePage() {
       <main className="max-w-4xl mx-auto px-6 pt-28 pb-8">
 
         {/* Hero */}
-        <section className="flex items-start gap-8 mb-16">
-          <div className="w-24 h-24 rounded-full flex-shrink-0 overflow-hidden"
+        <section className="flex items-start gap-6 mb-16">
+          <div className="w-16 h-16 sm:w-24 sm:h-24 rounded-full flex-shrink-0 overflow-hidden"
             style={{ border: "1px solid var(--border2)" }}>
             <Image src="/avatar.jpg" alt="Gabriel" width={96} height={96} className="object-cover w-full h-full" />
           </div>
-          <div>
+          <div className="min-w-0">
             <h1 className="text-5xl font-bold mb-2" style={{ color: "var(--text)" }}>{profile.name}</h1>
-            <p className="text-base mb-5" style={{ color: "var(--text-muted)" }}>{t.title}</p>
-            <div className="flex items-center flex-wrap gap-4 text-sm">
+            <p className="text-sm sm:text-base mb-4 sm:mb-5" style={{ color: "var(--text-muted)" }}>{t.title}</p>
+            <div className="flex items-center flex-wrap gap-3 text-sm">
               {/* GitHub */}
               <a href={profile.github} target="_blank" rel="noopener noreferrer"
                 className="flex items-center gap-2 transition-opacity hover:opacity-70"
