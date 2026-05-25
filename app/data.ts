@@ -51,6 +51,7 @@ export const projects = [
   {
     title: "Portfólio Website",
     description: "Portfólio pessoal desenvolvido com React, TypeScript, Tailwind e animações.",
+    descriptionEn:"Personal portfolio built with React, TypeScript, Tailwind and animations",
     tech: ["React", "TypeScript", "Tailwind"],
     github: "https://github.com/sixthy/portifolio",
     live: "https://ferreirasantos.dev.br",
@@ -59,6 +60,7 @@ export const projects = [
   {
     title: "BarberApp Dashboard",
     description: "Aplicação web com dashboard, autenticação e visualização de dados.",
+    descriptionEn:"Web application with dashboard, authentication and data visualization.",
     tech: ["React", "Node.js", "MongoDB"],
     github: "https://github.com/sixthy/BarberApp",
     live: "https://barber-app-two-lilac.vercel.app",
@@ -67,6 +69,7 @@ export const projects = [
   {
     title: "Connect4 Game",
     description: "Simulador do jogo Connect4.",
+    descriptionEn:"Connect4 game simulator.",
     tech: ["Java"],
     github: "https://github.com/sixthy/ConnectFour",
     live: "https://github.com/sixthy/ConnectFour",
@@ -75,6 +78,7 @@ export const projects = [
   {
     title: "TV Simulator",
     description: "Simulador de TV em Java.",
+    descriptionEn:"Java TV simulator",
     tech: ["Java"],
     github: "https://github.com/sixthy/JavaTVsimulator",
     live: "https://github.com/sixthy/JavaTVsimulator",
@@ -83,6 +87,7 @@ export const projects = [
   {
     title: "AlgorithmsDS Station",
     description: "Simulador de uma estação em funcionamento.",
+    descriptionEn:"Station working simulator",
     tech: ["Python"],
     github: "https://github.com/sixthy/AlgorithmsDS-Station",
     live: "https://github.com/AlgorithmsDS-Station",
@@ -91,6 +96,7 @@ export const projects = [
   {
     title: "Algorithm Huffman Compression",
     description: "Comprenssor e descompenssor de arquivos.",
+    descriptionEn:"File compressor and decompressor.",
     tech: ["Java"],
     github: "https://github.com/sixthy/Huffman-Compression",
     live: "https://github.com/Huffman-Compression",
@@ -99,6 +105,7 @@ export const projects = [
   {
     title: "WebScrapper ",
     description: "Estudo por conta propria para conhecer o funcionamento de um webscrapper.",
+    descriptionEn:"I studied independently to learn how a web scraper works.",
     tech: ["Python, BeautifulSoup, Pandas"],
     github: "https://github.com/sixthy/WebScrapper",
     live: "https://github.com/WebScrapper",
@@ -107,6 +114,7 @@ export const projects = [
   {
     title: "To Do List",
     description: "uma To Do List feita bem no começo da minha jornada.",
+    descriptionEn:"A to-do list I made right at the beginning of my journey.",
     tech: ["JavaScript, Bulma, Node"],
     github: "https://github.com/sixthy/to-do-list",
     live: "https://github.com/to-do-list",
