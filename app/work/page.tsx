@@ -6,7 +6,7 @@ import Image from "next/image";
 import { useState, useEffect } from "react";
 import { projects } from "../data";
 
-function ProjectCard({ project }: { project: typeof projects[0] }, lang: "pt" | "en") {
+function ProjectCard({ project, lang }: { project: typeof projects[0]; lang: "pt" | "en" }) {
   return (
     <div className="rounded-xl overflow-hidden group transition-colors"
       style={{ border: "1px solid var(--border)" }}>
@@ -98,7 +98,7 @@ export default function WorkPage() {
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {projects.map((project) => (
-            <ProjectCard key={project.title} project={project} />
+            <ProjectCard key={project.title} project={project} lang={lang} />
           ))}
         </div>
       </main>
