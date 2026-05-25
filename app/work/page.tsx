@@ -50,7 +50,7 @@ function ProjectCard({ project }: { project: typeof projects[0] }, lang: "pt" | 
           </div>
         </div>
           <p className="text-sm leading-relaxed mb-4" style={{ color: "var(--text-muted)" }}>
-            {lang === "en" && project.descriptionEn ? project.descriptionEn : project.description}
+            {lang === "pt" && project.description ? project.description : project.descriptionEn}
           </p>
         <div className="flex flex-wrap gap-2">
           {project.tech.map((tag) => (
