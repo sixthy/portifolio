@@ -97,7 +97,7 @@ export const projects = [
     title: "Algorithm Huffman Compression",
     description: "Comprenssor e descompenssor de arquivos.",
     descriptionEn:"File compressor and decompressor.",
-    tech: ["Java"],
+    tech: ["Python"],
     github: "https://github.com/sixthy/Huffman-Compression",
     live: "https://github.com/Huffman-Compression",
     icon: "/projects/Huffman.png",
